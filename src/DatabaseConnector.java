@@ -30,4 +30,30 @@ public class DatabaseConnector {
             throw new RuntimeException(e);
         }
     }
+    public ResultSet executeSelect(String sql) {
+        try {
+            Statement stm = this.connection.createStatement();
+            return stm.executeQuery(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int executeUpdate(String sql) {
+        try {
+            Statement stm = this.connection.createStatement();
+            return stm.executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int executeDelete(String sql) {
+        try {
+            Statement stm = this.connection.createStatement();
+            return stm.executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
